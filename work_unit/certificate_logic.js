@@ -16,7 +16,7 @@ var logger = require('../mini_poem/logging/logger4js').helper;
 var enums = new Enums();
 var errorCode = new ErrorCode();
 
-var adminAuth = new AdminAuth(REDIS_HOST, REDIS_PORT, REDIS_PASSWORD, null);
+var adminAuth = new AdminAuth(REDIS_HOST, REDIS_PORT, null, REDIS_PASSWORD);
 
 var signInService = "/irext/certificate/admin_login";
 var changePwService = "/irext/certificate/change_pw";

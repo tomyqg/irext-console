@@ -12,7 +12,6 @@ var ErrorCode = require('../constants/error_code');
 var enums = new Enums();
 var errorCode = new ErrorCode();
 
-
 var TicketPair = function(_cacheHost, _cachePort, _cacheAdmin, _cachePassword) {
     this.cache = new Cache(_cacheHost, _cachePort, _cacheAdmin, _cachePassword);
 };

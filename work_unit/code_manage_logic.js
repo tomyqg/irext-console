@@ -32,7 +32,7 @@ var errorCode = new ErrorCode();
 
 var async = require('async');
 
-var adminAuth = new AdminAuth(REDIS_HOST, REDIS_PORT, REDIS_PASSWORD, null);
+var adminAuth = new AdminAuth(REDIS_HOST, REDIS_PORT, null, REDIS_PASSWORD);
 
 // relative XML file path
 var PROTOCOL_PATH = "protocol";
