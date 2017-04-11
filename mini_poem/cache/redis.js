@@ -16,12 +16,12 @@ var errorCode = new ErrorCode();
 var enums = new Enums();
 
 var Cache = function(_host, _port, _user, _password) {
-    this.redisClient = redis.createClient({detect_buffers: true});
+    this.redisClient = redis.createClient(_port, _host, {detect_buffers: true});
     // initialize client according to run-time ENV
     // in _user indicates the redis instance:token pair value
-    if(null != _user) {
+    if(null != _password) {
         logger.info("Redis needs authorization");
-        this.redisClient.auth(_user, redis.print);
+        this.redisClient.auth(_password, redis.print);
     }
     logger.info("Redis client connected");
 };
@@ -34,7 +34,6 @@ Cache.prototype.set = function(key, value, ttl, callback) {
             logger.error("Redis set value failed with key " + key);
             callback(errorCode.FAILED);
         } else {
-            logger.info("Redis set value successfully");
             callback(errorCode.SUCCESS);
         }
     });
@@ -48,7 +47,6 @@ Cache.prototype.get = function(key, isBuffer, callback) {
                 this.redisClient.end();
                 callback(errorCode.FAILED, null);
             } else {
-                logger.info("Redis get buffer successfully");
                 this.redisClient.end();
                 callback(errorCode.SUCCESS, reply);
             }
@@ -60,7 +58,6 @@ Cache.prototype.get = function(key, isBuffer, callback) {
                 this.redisClient.end();
                 callback(errorCode.FAILED, null);
             } else {
-                logger.info("Redis get value successfully");
                 callback(errorCode.SUCCESS, reply);
             }
         });
