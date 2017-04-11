@@ -184,10 +184,11 @@ exports.listRemoteIndexes = function (req, res) {
     var categoryID = req.query.category_id;
     var brandID = req.query.brand_id;
     var cityCode = req.query.city_code;
+    var operatorID = req.query.operator_id;
     var from = req.query.from;
     var count = req.query.count;
 
-    internalLogic.listRemoteIndexesWorkUnit(categoryID, brandID, cityCode, from, count,
+    internalLogic.listRemoteIndexesWorkUnit(categoryID, brandID, cityCode, operatorID, from, count,
         function (listRemoteIndexesErr, remoteIndexes) {
             res.send(remoteIndexes);
             res.end();

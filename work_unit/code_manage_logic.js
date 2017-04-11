@@ -92,17 +92,25 @@ exports.listOperatorsWorkUnit = function (cityCode, from, count, callback) {
     });
 };
 
-exports.listRemoteIndexesWorkUnit = function (categoryID, brandID, cityCode, from, count, callback) {
+exports.listRemoteIndexesWorkUnit = function (categoryID, brandID, cityCode, operatorID, from, count, callback) {
     var conditions;
 
     if (categoryID == enums.CATEGORY_STB) {
-        var provinceSuffix = cityCode.substring(0, 2);
-        var unspecifiedCityCode = provinceSuffix + '0000';
-        conditions = {
-            category_id: categoryID,
-            city_code: cityCode,
-            status: orm.gt(enums.ITEM_INVALID)
-        };
+        if (null == operatorID) {
+            conditions = {
+                category_id: categoryID,
+                city_code: cityCode,
+                status: orm.gt(enums.ITEM_INVALID)
+            };
+        } else {
+            conditions = {
+                category_id: categoryID,
+                city_code: cityCode,
+                operator_id: operatorID,
+                status: orm.gt(enums.ITEM_INVALID)
+            };
+        }
+
     } else if (categoryID == enums.CATEGORY_AC ||
         categoryID == enums.CATEGORY_TV ||
         categoryID == enums.CATEGORY_NW ||

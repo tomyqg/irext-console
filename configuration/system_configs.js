@@ -21,9 +21,9 @@ exports.setupEnvironment = function () {
     REDIS_PASSWORD = null;
     FILE_TEMP_PATH = "~/home/your_name/rc_extension";
     PYTHON_PATH = "/usr/bin/python";
-    LISTEN_PORT = "8300";
+    LISTEN_PORT = "80";
     SERVER_ADDRESS = "localhost";
     EXTERNAL_SERVER_ADDRESS = "irext.net";
-    EXTERNAL_SERVER_PORT = "80"
-    SOCKET_0_ADDRESS = "http://localhost:8300";
+    EXTERNAL_SERVER_PORT = "80";
+    SOCKET_0_ADDRESS = "http://localhost";
 };
