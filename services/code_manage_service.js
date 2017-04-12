@@ -173,7 +173,31 @@ exports.listOperators = function (req, res) {
 };
 
 /*
- * function :   List remotes
+ * function :   List indexes
+ * parameter :  category_id
+ *              brand_id/city_code
+ *              operator_id
+ *              from
+ *              count
+ * return :     Remote Index List
+ */
+exports.listIndexes = function (req, res) {
+    var categoryID = req.body.category_id;
+    var brandID = req.body.brand_id;
+    var cityCode = req.body.city_code;
+    var operatorID = req.body.operator_id;
+    var from = req.body.from;
+    var count = req.body.count;
+
+    internalLogic.listRemoteIndexesWorkUnit(categoryID, brandID, cityCode, operatorID, from, count,
+        function (listRemoteIndexesErr, remoteIndexes) {
+            res.send(remoteIndexes);
+            res.end();
+        });
+};
+
+/*
+ * function :   List remote indexes
  * parameter :  category_id
  *              brand_id/city_code
  *              from

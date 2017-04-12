@@ -11,6 +11,7 @@ app.post('/irext/int/list_cities', intService.listCities);
 app.post('/irext/int/list_operators', intService.listOperators);
 app.post('/irext/int/list_categories', intService.listCategories);
 app.post('/irext/int/list_brands', intService.listBrands);
+app.post('/irext/int/list_indexes', intService.listIndexes);
 app.post('/irext/int/list_ir_protocols', intService.listIRProtocols);
 
 app.post('/irext/int/list_unpublished_brands', intService.listUnpublishedBrands);
