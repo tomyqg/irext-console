@@ -189,9 +189,12 @@ exports.listIndexes = function (req, res) {
     var from = req.body.from;
     var count = req.body.count;
 
+    var remoteIndexResponse = new RemoteIndexResponse();
     internalLogic.listRemoteIndexesWorkUnit(categoryID, brandID, cityCode, operatorID, from, count,
         function (listRemoteIndexesErr, remoteIndexes) {
-            res.send(remoteIndexes);
+            remoteIndexResponse.status = listRemoteIndexesErr;
+            remoteIndexResponse.entity = remoteIndexes;
+            res.send(remoteIndexResponse);
             res.end();
         });
 };
