@@ -133,7 +133,6 @@ exports.listRemoteIndexesWorkUnit = function (categoryID, brandID, cityCode, ope
         return;
     }
 
-    // logger.info("remote index filter conditions = " + JSON.stringify(conditions));
     RemoteIndex.listRemoteIndexes(conditions, from, count, "priority", function(listRemoteIndexesErr, remoteIndexes) {
         callback(listRemoteIndexesErr, remoteIndexes);
     });

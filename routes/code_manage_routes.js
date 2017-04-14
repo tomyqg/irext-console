@@ -13,6 +13,7 @@ app.post('/irext/int/list_categories', intService.listCategories);
 app.post('/irext/int/list_brands', intService.listBrands);
 app.post('/irext/int/list_indexes', intService.listIndexes);
 app.post('/irext/int/list_ir_protocols', intService.listIRProtocols);
+app.post('/irext/int/download_bin', intService.downloadIndex);
 
 app.post('/irext/int/list_unpublished_brands', intService.listUnpublishedBrands);
 app.post('/irext/int/list_unpublished_remote_indexes', intService.listUnpublishedRemoteIndexes);

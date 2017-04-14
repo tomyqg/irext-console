@@ -244,6 +244,26 @@ exports.searchRemoteIndexes = function (req, res) {
 };
 
 /*
+ * function :   Download remote binary by post request
+ * parameter :  remote index ID
+ * return :     Redirect to binary download
+ */
+exports.downloadIndex = function (req, res) {
+    var remoteIndexID = req.body.index_id;
+
+    internalLogic.downloadRemoteBinCachedWorkUnit(remoteIndexID, function (serveBinErr, filePath) {
+        if (errorCode.SUCCESS.code == serveBinErr.code) {
+            logger.info("download file located at " + filePath);
+            res.download(filePath, "");
+        } else {
+            logger.info("download file failed");
+            res.write('');
+            res.end();
+        }
+    });
+};
+
+/*
  * function :   Download remote binary
  * parameter :  remote index ID
  * return :     Redirect to binary download
