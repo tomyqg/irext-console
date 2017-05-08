@@ -43,7 +43,7 @@ require('./routes');
 var certificateLogic = require('./work_unit/certificate_logic.js');
 
 // kick start the engine
-System.startupHttp(http, serverListenPort, "irext Console V0.0.4");
+System.startupHttp(http, serverListenPort, "irext Console V0.1.1");
 
 ////////////////// authentication middleware //////////////////
 function tokenValidation (req, res, next) {
