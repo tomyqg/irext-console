@@ -10,7 +10,7 @@ Run following commands in your Linux bash or Windows cmd
 npm-install
 npm install -g express
 npm install -g bower
-cd web
+cd web/public_js
 bower install
 ```
 
