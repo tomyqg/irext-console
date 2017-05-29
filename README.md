@@ -4,7 +4,7 @@ IR binary code mangement back-end and web portal for irext
 ### Runtime environment
 Node.js V4.X.X is required, you could download it from [Node.js V4.8.3](https://nodejs.org/dist/v4.8.3/) for latest release
 
-Run following command in your Linux bash or Windows cmd
+Run following commands in your Linux bash or Windows cmd
 
 ```shell script
 npm-install
