@@ -4,13 +4,13 @@
   "description": "console of irext",
   "repository": {
     "type": "git",
-    "url": "https://github.com/strawmanbobi/irext_console"
+    "url": "https://github.com/irext/irext-cli"
   },
   "keywords": [
     "IRDA"
   ],
   "author": "strawmanbobi",
-  "license": "GPL",
+  "license": "MIT",
   "dependencies": {
     "bootstrap": "^3.3.7",
     "bootstrap-multiselect": "^0.9.13",
