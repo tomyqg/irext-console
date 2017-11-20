@@ -99,16 +99,16 @@ function tokenValidation (req, res, next) {
 
         var permissions = "";
 
-        if (-1 != pageCode) {
+        if (-1 !== pageCode) {
             permissions = ",0";
-        } else if (-1 != pageDoc) {
+        } else if (-1 !== pageDoc) {
             permissions = ",1";
-        } else if (-1 != pageStat) {
+        } else if (-1 !== pageStat) {
             permissions = ",2";
         }
 
         certificateLogic.verifyTokenWithPermissionWorkUnit(adminID, token, permissions, function(validateTokenErr) {
-            if(errorCode.SUCCESS.code != validateTokenErr.code) {
+            if(errorCode.SUCCESS.code !== validateTokenErr.code) {
                 res.redirect("/error/auth_error.html");
             } else {
                 next();
