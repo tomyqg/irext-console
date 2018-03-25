@@ -122,7 +122,8 @@ exports.listRemoteIndexesWorkUnit = function (categoryID, brandID, cityCode, ope
         categoryID == enums.CATEGORY_LIGHT_BULB ||
         categoryID == enums.CATEGORY_BSTB ||
         categoryID == enums.CATEGORY_CLEANING_ROBOT ||
-        categoryID == enums.CATEGORY_AIR_CLEANER) {
+        categoryID == enums.CATEGORY_AIR_CLEANER ||
+        categoryID == enums.CATEGORY_DYSON) {
         conditions = {
             category_id: categoryID,
             brand_id: brandID,
@@ -242,6 +243,7 @@ exports.createRemoteIndexWorkUnit = function(remoteIndex, filePath, contentType,
                 case enums.CATEGORY_BSTB:
                 case enums.CATEGORY_CLEANING_ROBOT:
                 case enums.CATEGORY_AIR_CLEANER:
+                case enums.CATEGORY_DYSON:
                     pythonFile = "irda_tv_encode.py";
                     break;
                 default:

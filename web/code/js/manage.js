@@ -1107,6 +1107,10 @@ function switchCategory() {
             showBrandSelector();
             showProtocolSelector(true);
             break;
+        case CATEGORY_DYSON:
+            showBrandSelector();
+            showProtocolSelector(true);
+            break;
         default:
             console.log('Wrong category : ' + currentCategory.id);
             break;
@@ -1226,6 +1230,9 @@ function onFilterCategoryChange() {
             showFilterBrandSelector();
             break;
         case CATEGORY_AIR_CLEANER:
+            showFilterBrandSelector();
+            break;
+        case CATEGORY_DYSONS:
             showFilterBrandSelector();
             break;
         default:

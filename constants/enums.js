@@ -36,6 +36,7 @@ function Enums() {
     this.CATEGORY_BSTB = 11;
     this.CATEGORY_CLEANING_ROBOT = 12;
     this.CATEGORY_AIR_CLEANER = 13;
+    this.CATEGORY_DYSON = 14;
 
     this.PROTOCOL_TYPE_G1 = 0;
     this.PROTOCOL_TYPE_G2_QUATERNARY = 1;
