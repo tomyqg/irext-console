@@ -10,7 +10,7 @@ var crypto = require('crypto');
 // global inclusion
 require('../mini_poem/configuration/constants');
 var orm = require('orm');
-var AdminAuth = require('../authority/admin_auth.js');
+var AdminAuth = require('../authentication/admin_auth.js');
 var PythonCaller = require('../mini_poem/external/python_caller');
 
 var Category = require('../model/category_dao.js');

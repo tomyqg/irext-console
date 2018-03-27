@@ -5,7 +5,7 @@
 
 require('../mini_poem/configuration/constants');
 
-var AdminAuth = require('../authority/admin_auth.js');
+var AdminAuth = require('../authentication/admin_auth.js');
 var MD5 = require('../mini_poem/crypto/md5.js');
 var RequestSender = require('../mini_poem/http/request.js');
 
